@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Data Diri</title>
+
+    <style>
+      body {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Daftar Data Diri</h1>
+
+
+      <br>
+
+      <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th width="15%">NIM</th>
+                  <th width="30%">Nama</th>
+                  <th width="45%">Alamat</th>
+
+              </tr>
+          </thead>
+          <tbody>
+            {% if data %}
+              {% for data in data %}
+              <tr>
+                  <td>{{ data.nim }}</td>
+                  <td>{{ data.nama }}</td>
+                  <td>{{ data.alamat }}</td>
+              </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="5">Data tidak ditemukan.</td>
+              </tr>
+            {% endif %}
+          </tbody>
+      </table>
+  </div>
+ 
+  </body>
+</html>
